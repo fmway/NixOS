@@ -12,9 +12,7 @@
   inherit (config.home) homeDirectory username;
 in
 {
-  imports = map (x:
-    lib.mkAliasOptionModule [ "home" x ] [ x ]
-  ) [ "catppuccin" "dconf" ] ++ [
+  imports = [
     ./desktop
     {
       home = lib.fmway.treeImport {
