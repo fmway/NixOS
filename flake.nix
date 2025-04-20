@@ -51,6 +51,7 @@
           inherit (home-manager.lib) hm;
           flake-parts = flake-parts.lib;
           fmway = fmway-nix.fmway // self.lib;
+          inherit (fmway-nix) infuse;
         });
       };
     } {

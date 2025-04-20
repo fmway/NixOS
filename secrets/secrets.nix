@@ -1,7 +1,7 @@
 let
   keys = {
     system = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO58iqlTtlgkt9e8u7X6hbBusv6yf9LGJGk16/YhVDOw";
-    fmway = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKI9FTK016k949uoOby8U4BDa92wocG50DWXZD40OxGI";
+    fmway = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGM2l3zhUoxYpBzzmH7KsWdo1XMrc1eCgNrwaIHVM2pZ";
   };
   
   mySecret = arr: builtins.listToAttrs (map (name: {

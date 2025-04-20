@@ -1,5 +1,5 @@
 { config, pkgs, ... }: let 
-  inherit (pkgs.functions) printPath;
+  inherit (pkgs.functions) printPathv1;
   inherit (config.services) fcgiwrap certs;
 in {
   type = "https";
@@ -28,7 +28,7 @@ in {
       try_files {path} {path}/index.cgi {path}/index {path}.cgi 404 404.cgi
       reverse_proxy unix/${fcgiwrap.instances.${config.data.defaultUser}.socket.address} {
         transport fastcgi {
-          env PATH ${printPath config.data.defaultUser}
+          env PATH ${printPathv1 config.data.defaultUser}
           split .cgi
         }
       }
