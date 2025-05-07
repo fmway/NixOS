@@ -1,4 +1,4 @@
-{ inputs, self, ... }:
+{ inputs, version, self, ... }:
 {
   flake.homeConfigurations.default = let
     system = "x86_64-linux";
@@ -18,6 +18,7 @@
       ({ lib, config, ... }: {
         home.username = lib.mkDefault "fmway";
         home.homeDirectory = lib.mkDefault "/home/${config.home.username}";
+        home.stateVersion = version;
       })
       ../programs/overlays
     ];
